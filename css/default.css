@@ -114,3 +114,61 @@ body {
 #copyright a {
     color: #666
 }
+#questionSection {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: #D32F2F; /* Red color to match the theme */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#questionSection.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+#questionLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #D32F2F; /* Red background */
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+#questionLink:hover {
+    background-color: #B71C1C; /* Darker red on hover */
+}
+
+/* Paper-like effect */
+#questionSection::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+#questionSection::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
